@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <div id="app">
+        <template v-if="mostrar">
+            <h1>{{ titulo | uppercase }}</h1>
+            <h2>{{ subtitulo | uppercase | lowercase }}</h2>
+            
+            Hola {{ nombre }}
+            <a v-bind:href="url" target="_blank">{{ pagina }}</a>
+        </template>  
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: 'David',
+                url: 'https://google.com',
+                pagina: 'Google',
+                mostrar: true,
+                titulo: "Curso de Vuejs" ,
+                subtitulo: "Introduccion a Vuejs"
+
+            },
+            filters: {
+                uppercase: function(str) {
+                    return str.toUpperCase()
+                },
+                lowercase: function(str) {
+                    return str.toLowerCase()
+                }
+            }
+        })
+    </script>
+</body>
