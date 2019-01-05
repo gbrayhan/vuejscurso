@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" v-model="nombre">
+        <p>Tu nombre en mayusculas es: {{ nombre | uppercase}} </p>
+
+        <form v-on:submit.prevent="metodoEnviar" action="get">
+            <h2>Cuales son tus cursos favoritos</h2>
+            <input type="checkbox" v-model="cursos" id="vue" value="vue">
+            <!-- sincronizar con el id -->
+            <label for="vue">Vue js</label>
+
+            <input type="checkbox" v-model="cursos" id="php" value="php">
+            <label for="php">Curso de PHP</label>
+            <input type="checkbox" v-model="cursos" id="php" value="react">
+            <label for="react">Curso de React</label>
+            
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: '',
+                cursos: []
+            },
+            filters: {
+                uppercase: function (str) {
+                    return str.toUpperCase()
+                },
+                lowercase: function (str) {
+                    return str.toLowerCase()
+                }
+            },
+            methods: {
+                metodoEnviar: function () {
+                    console.log(this.cursos)
+                }
+            }
+
+        })
+    </script>
+</body>
