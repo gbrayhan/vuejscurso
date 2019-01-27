@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <div id="app">
+      
+        <form v-on:submit.prevent="metodoEnviar" action="get">
+            <h2>¿Cuales son tus cursos favoritos de Platzi?</h2>
+            <template v-for="curso in cursos">
+                <input type="checkbox" v-model="cursosSeleccionados" v-bind:id="curso.value" v-bind:value="curso.value">
+                <label v-bind:for="curso.value">{{ curso.nombre }}</label>
+            </template>
+          
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                nombre: '',
+                cursos: [
+                    {
+                        nombre: 'Curso de introduccion a Vuejs',
+                        value: 'vue'
+                    },
+                    {
+                        nombre: 'Curso de introduccion a PHP',
+                        value: 'php'
+                    },
+                    {
+                        nombre: 'Curso Basico de React',
+                        value: 'react' 
+                    }
+                ],
+                cursosSeleccionados: []
+            },
+            filters: {
+                uppercase: function (str) {
+                    return str.toUpperCase()
+                },
+                lowercase: function (str) {
+                    return str.toLowerCase()
+                }
+            },
+            methods: {
+                metodoEnviar: function () {
+                    console.log(this.cursosSeleccionados)
+                }
+            }
+
+        })
+    </script>
+</body>
