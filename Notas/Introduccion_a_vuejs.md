@@ -2,7 +2,7 @@
   
 Hola mundo en Vuejs  
   
-```js  
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +26,7 @@ Hola mundo en Vuejs
         })
     </script>
 </body>
-```    
+```
   
 Las variables de **vuejs** no se pueden utilizar en los atributos de las etiquetas.   
 En la consola se puede acceder a las variables Vuejs de la siguiente manera:  
@@ -38,7 +38,7 @@ En la consola se puede acceder a las variables Vuejs de la siguiente manera:
     
 Manejo de condiciones con Vuejs.  
   
-```js  
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +67,8 @@ Manejo de condiciones con Vuejs.
         })
     </script>
 </body>
-```  
+```
+
   
 Es recomendable utilizar la etiqueta template que no es visible en el DOM y ahi agregarle la condicional de **v-if**.  
 Otra herramienta de vuejs es **v-show** que el navegador entiende de una mejor manera para el navegador, la desventaja es que no se puede utilizar los **templates** de vuejs.  
@@ -75,7 +76,7 @@ Otra herramienta de vuejs es **v-show** que el navegador entiende de una mejor m
   
 Los datos en vuejs pueden filtrase a partir de metodos previamente definidos, como se muestra a continuacion:  
 
-```js  
+```html  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,7 +115,7 @@ Los datos en vuejs pueden filtrase a partir de metodos previamente definidos, co
         })
     </script>
 </body>
-```  
+```
   
 Cabe señalar que se pueden aplilar los metodos que se ejecutan sobre una variable, y estos son con el orden de izquierda a derecha, en el codigo anterior se ejemplifica lo antes mencionado de la siguiente manera.  
 `{{ subtitulo | uppercase | lowercase }} `  
@@ -124,7 +125,7 @@ Cabe señalar que se pueden aplilar los metodos que se ejecutan sobre una variab
   
 Se pueden crear metodos que se mandan a llamar a partir de eventos del navegador, a continuacion de muestra como se implementan un sumador y un decrementador que se ejecutan luego de dar click. El atributo que se agrega a la etiqueta es **v-on:click="sumar"** y el codigo completo es el siguiente.  
   
-```js  
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,7 +158,7 @@ Se pueden crear metodos que se mandan a llamar a partir de eventos del navegador
         })
     </script>
 </body>
-```  
+```
   
 Si se utiliza un **arrow function**, no se cambia la variable que instanciamos en vuejs. Las arros function en vue son un antipatron ya que hace referencia a lo que esta fuera de "app".   
   
@@ -165,7 +166,7 @@ Si se utiliza un **arrow function**, no se cambia la variable que instanciamos e
 
 Vuejs permite realizar distintas acciones sobre los formularios, incluso interrumpir la ejecucion de envio del formulario con el trubuto **v-on:submit.prevent="metodoEnviar"** en la etiqueta de **form** y los elementos input pueden trabajar dinamicamente con vuejs utilizando los **v-model**. A continuacion se muestra el codigo con el uso de vuejs en formularios.  
   
-```js  
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -219,5 +220,7 @@ Vuejs permite realizar distintas acciones sobre los formularios, incluso interru
         })
     </script>
 </body>
-```  
+```
+
+
 
